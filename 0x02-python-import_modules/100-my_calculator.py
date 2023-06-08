@@ -12,11 +12,11 @@ if __name__ == "__main__":
                 '/': div
                }
     if argv[2] in operator:
-        integer1 = int(argv[1])
-        integer2 = int(argv[3])
+        num1 = int(argv[1])
+        num2 = int(argv[3])
         operation = operator[argv[2]]
-        result = operator(integer1, integer2)
-        print('{:d} {:s} {:d} = {:d}'.format(integer1, argv[2], integer2, result))
+        result = operation(num1, num2)
+        print('{:d} {:s} {:d} = {:d}'.format(num1, argv[2], num2, result))
     else:
         print('Unknown operator. Available operators: +, -, * and /')
         exit(1)
