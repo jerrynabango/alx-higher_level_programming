@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
     from sys import argv
     from calculator_1 import add, sub, mul, div
     def calculate_result(num1, operator, num2):
@@ -15,7 +14,8 @@ if __name__ == "__main__":
         return div(num1, num2)
     else:
         raise ValueError("Unknown operator. Available operators: +, -, * and /")
-
+        
+if __name__ == "__main__":
     if len(argv) != 4:
         print('Usage: {} <a> <operator> <b>'.format(argv[0]))
         exit(1)
