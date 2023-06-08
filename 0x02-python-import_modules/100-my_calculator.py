@@ -12,7 +12,7 @@ if __name__ == "__main__":
         integer2 = int(argv[3])
         operation = operators[argv[2]]
         result = operation(integer1, integer2)
-        print("{} {} {} = {}".format(integer1, argv[2], integer2, result))
+        print("{:d} {:d} {:d} = {:d}".format(integer1, argv[2], integer2, result))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
