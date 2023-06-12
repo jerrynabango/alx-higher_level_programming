@@ -23,6 +23,5 @@ void free_listint(listint_t *head);
 
 int is_palindrome(listint_t **head);
 size_t list_palindrome(const listint_t *integer);
-listint_t *check_palindrome(listint_t *head, unsigned int index);
 
 #endif /* LISTS_H */
