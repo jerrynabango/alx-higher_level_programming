@@ -5,4 +5,6 @@ def divisible_by_2(my_list=[]):
         if my_list[find_all] % 2 == 0:
             find[find_all] = True
         else:
-            return find
+            find[find_all] = 0
+
+    return find
