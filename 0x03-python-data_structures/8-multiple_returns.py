@@ -6,3 +6,4 @@ def multiple_returns(sentence):
         return tuple_length
     else:
         return length, sentence[0:1]
+    
