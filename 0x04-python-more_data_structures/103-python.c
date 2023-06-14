@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "/usr/include/python3.4/Python.h"
+#include <stdio.h>
 
 /**
  * print_python_bytes - A function that prints the bytes
