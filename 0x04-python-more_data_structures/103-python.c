@@ -1,5 +1,5 @@
-#include "/usr/include/python3.4/Python.h"
 #include <stdio.h>
+#include "/usr/include/python3.4/Python.h"
 
 /**
  * print_python_bytes - A function that prints the bytes
@@ -10,7 +10,7 @@ void print_python_bytes(PyObject *p)
 {
 	char *py_list = NULL;
 	long int bytes_obj;
-	int basic_info = 0;
+	int basic_info;
 
 	printf("[.] bytes object info\n");
 	if (!PyBytes_Check(p))
@@ -29,10 +29,9 @@ void print_python_bytes(PyObject *p)
 	{
 		printf("  first 10 bytes:");
 	}
-	while (basic_info <= bytes_obj && basic_info < 10)
+	for (basic_info = 0; basic_info <= bytes_obj && basic_info < 10; basic_info++)
 	{
 		printf(" %02hhx", py_list[basic_info]);
-		basic_info++;
 	}
 	printf("\n");
 }
@@ -44,7 +43,7 @@ void print_python_bytes(PyObject *p)
  */
 void print_python_list(PyObject *p)
 {
-	int python_info = 0;
+	int python_info;
 	const char *type;
 	long int bytes_obj = PyList_Size(p);
 	PyListObject *list_obj = (PyListObject *)p;
@@ -52,7 +51,8 @@ void print_python_list(PyObject *p)
 	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %li\n", bytes_obj);
 	printf("[*] Allocated = %li\n", list_obj->allocated);
-	while (python_info < bytes_obj)
+
+	for (python_info = 0; python_info < bytes_obj; python_info++)
 	{
 		type = (list_obj->ob_item[python_info])->ob_type->tp_name;
 		printf("Element %d: %s\n", python_info, type);
@@ -60,7 +60,6 @@ void print_python_list(PyObject *p)
 		{
 			print_python_bytes(list_obj->ob_item[python_info]);
 		}
-		python_info++;
 	}
 }
 
