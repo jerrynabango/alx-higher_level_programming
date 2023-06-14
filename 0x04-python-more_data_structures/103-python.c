@@ -55,7 +55,7 @@ void print_python_list(PyObject *p)
 	while (python_info < bytes_obj)
 	{
 		type = (list_obj->ob_item[python_info])->ob_type->tp_name;
-		printf("Element %python_info: %s\n", python_info, type);
+		printf("Element %d: %s\n", python_info, type);
 		if (!strcmp(type, "bytes"))
 		{
 			print_python_bytes(list_obj->ob_item[python_info]);
