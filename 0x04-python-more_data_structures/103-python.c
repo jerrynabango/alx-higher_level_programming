@@ -2,24 +2,6 @@
 #include "/usr/include/python3.4/Python.h"
 
 /**
- * print_hexn - A function to print hex numbers
- *
- * @str: Indicates the hex representation of a string
- *
- * @n: Indicates the number of characters
-*/
-void print_hexn(const char *str, int n)
-{
-	int i = 0;
-
-	for (i < n - 1)
-		printf("%02x ", (unsigned char) str[i]);
-		++i;
-
-	printf("%02x", str[i]);
-}
-
-/**
  * print_python_bytes - A function that prints the bytes
  *
  * @p: Indicates a pointer to the bytes object
