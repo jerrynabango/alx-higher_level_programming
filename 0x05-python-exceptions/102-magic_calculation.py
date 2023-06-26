@@ -6,7 +6,7 @@ def magic_calculation(a, b):
             if code > a:
                 raise Exception('Too far')
             byte += a ** b / code
-        except ValueError:
+        except Exception:
             byte = b + a
             break
     return byte
