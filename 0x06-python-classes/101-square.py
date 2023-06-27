@@ -56,14 +56,10 @@ class Square:
             print()
         else:
             if self.position[1] > 0:
-                instance = 0
-            while instance < self.position[1]:
-                print('\n', end="")
-                instance += 1
-        instance = 0
-        while instance < self.size:
-            print("{}{}".format(' ' * self.position[0], '#' * self.size))
-            instance += 1
+                for instance in range(self.position[1]):
+                    print('\n', end="")
+            for instance in range(self.size):
+                print("{}{}".format(' ' * self.position[0], '#' * self.size))
 
     def __str__(self):
         """Conversion to node"""
@@ -71,16 +67,11 @@ class Square:
         if self.size == 0:
             return square
         else:
-            instance = 0
-        while instance < self.position[1]:
-            square += '\n'
-            instance += 1
-
-        instance = 0
-        while instance < self.size:
-            square += ' ' * self.position[0]
-            square += '#' * self.size
-            square += '\n'
-            instance += 1
-
-        return square[:-1]
+            if self.position[1] > 0:
+                for instance in range(self.position[1]):
+                    square += '\n'
+            for instance in range(self.size):
+                square += ' ' * self.position[0]
+                square += '#' * self.size
+                square += '\n'
+            return square[:-1]
