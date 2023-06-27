@@ -1,64 +1,34 @@
 #!/usr/bin/python3
-
-"""
-A script that creates a class and validates its given attribute"""
+"""Print Square instance"""
 
 
 class Square:
-    """
-        Atrributes:
-    """
+    """Defines a square based on 6-square.py"""
     def __init__(self, size=0, position=(0, 0)):
-        """
-        Args:
-            self (Square): object
-            size (int): size of square
-            position (tuple): print coordinates
-        """
+        """Initialization of the Square.
+        instance: self.size, self.position"""
         self.size = size
         self.position = position
 
     @property
     def size(self):
         """
-        size getter
-        Returns:
-            int: size of Square
+        @property: Defines the method(Getter for specific attribute).
+        private attribute: __size
         """
         return self.__size
-
-    @size.setter
-    def size(self, value):
-        """
-        size setter
-        Raises:
-            TypeError: if value is not an integer
-            ValueError: if value is -ve
-        """
-        if isinstance(value, int) is False:
-            raise TypeError('size must be an integer')
-        if value < 0:
-            raise ValueError('size must be >= 0')
-        self.__size = value
 
     @property
     def position(self):
         """
-        position getter
-        Returns:
-            tuple: Size of Square
+        @property: Defines the method(Getter for specific attribute).
+        private attribute: __position
         """
         return self.__position
 
     @position.setter
     def position(self, value):
-        """
-        position setter
-        Args:
-            value (tuple): New Square position
-        Raises:
-            TypeError: if value is not a tuple and elements are not integers
-        """
+        """Position of the attribute"""
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         if not isinstance(value[0], int) or not isinstance(value[1], int):
@@ -67,41 +37,53 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
+    @size.setter
+    def size(self, value):
+        """Size of the square"""
+        if isinstance(value, int) is False:
+            raise TypeError('size must be an integer')
+        if value < 0:
+            raise ValueError('size must be >= 0')
+        self.__size = value
+
     def area(self):
         """
-        Args:
-            self (Square): instance of class
-        Return:
-            area (int)
+        Area of the square.
+        instance: self.size
         """
-        return (self.size * self.size)
+        return self.size * self.size  # return self.__size **2
 
     def my_print(self):
-        """
-        Print the Square to stdout using '#'
-        """
+        """print the square"""
         if self.size == 0:
             print()
         else:
             if self.position[1] > 0:
-                for i in range(self.position[1]):
-                    print('\n', end="")
-            for i in range(self.size):
-                print("{}{}".format(' ' * self.position[0], '#' * self.size))
+                instance = 0
+            while instance < self.position[1]:
+                print('\n', end="")
+                instance += 1
+        instance = 0
+        while instance < self.size:
+            print("{}{}".format(' ' * self.position[0], '#' * self.size))
+            instance += 1
 
     def __str__(self):
-        """
-        String representation of instances
-        """
-        string = ""
+        """Conversion to node"""
+        square = ""
         if self.size == 0:
-            return string
+            return square
         else:
-            if self.position[1] > 0:
-                for i in range(self.position[1]):
-                    string += '\n'
-            for i in range(self.size):
-                string += ' ' * self.position[0]
-                string += '#' * self.size
-                string += '\n'
-            return string[:-1]
+            instance = 0
+        while instance < self.position[1]:
+            square += '\n'
+            instance += 1
+
+        instance = 0
+        while instance < self.size:
+            square += ' ' * self.position[0]
+            square += '#' * self.size
+            square += '\n'
+            instance += 1
+
+        return square[:-1]
