@@ -16,15 +16,6 @@ class Square:
         """
         return self.__size
 
-    @size.setter
-    def size(self, value):
-        """Size of the square"""
-        if isinstance(value, int) is False:
-            raise TypeError('size must be an integer')
-        if value < 0:
-            raise ValueError('size must be >= 0')
-        self.__size = value
-
     @property
     def position(self):
         """
@@ -43,6 +34,15 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
+    @size.setter
+    def size(self, value):
+        """Size of the square"""
+        if isinstance(value, int) is False:
+            raise TypeError('size must be an integer')
+        if value < 0:
+            raise ValueError('size must be >= 0')
+        self.__size = value
+
     def area(self):
         """
         Area of the square.
@@ -54,33 +54,22 @@ class Square:
         """print the square"""
         if self.size == 0:
             print()
-        else:
-            if self.position[1] > 0:
-                instance = 0
-            while instance < self.position[1]:
-                print('\n', end="")
-                instance += 1
-        instance = 0
-        while instance < self.size:
-            print("{}{}".format(' ' * self.position[0], '#' * self.size))
-            instance += 1
+            return
+
+        [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            print("")
 
     def __str__(self):
         """Conversion to node"""
         square = ""
-        if self.size == 0:
-            return square
-        else:
-            instance = 0
-        while instance < self.position[1]:
-            square += '\n'
-            instance += 1
-
-        instance = 0
-        while instance < self.size:
-            square += ' ' * self.position[0]
-            square += '#' * self.size
-            square += '\n'
-            instance += 1
-
-        return square[:-1]
+        if self.__size != 0:
+            [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            if i != self.__size - 1:
+                print("")
+        return ("")
