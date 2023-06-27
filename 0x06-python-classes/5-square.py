@@ -43,5 +43,5 @@ class Square:
         if self.__size == 0:
             print()
             return
-        for i in range(self.__size):
-            print("".join(["#" for j in range(self.__size)]))
+        for square in range(self.__size):
+            print("".join(["#" for print_square in range(self.__size)]))
