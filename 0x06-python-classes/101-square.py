@@ -51,36 +51,24 @@ class Square:
         return self.size * self.size  # return self.__size **2
 
     def my_print(self):
-        """print the square"""
-        if self.size == 0:
-            print()
-        else:
-            if self.position[1] > 0:
-                instance = 0
-            while instance < self.position[1]:
-                print('\n', end="")
-                instance += 1
-        instance = 0
-        while instance < self.size:
-            print("{}{}".format(' ' * self.position[0], '#' * self.size))
-            instance += 1
+        """Print the square with the # character."""
+        if self.__size == 0:
+            print("")
+            return
+
+        [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            print("")
 
     def __str__(self):
-        """Conversion to node"""
-        square = ""
-        if self.size == 0:
-            return square
-        else:
-            instance = 0
-        while instance < self.position[1]:
-            square += '\n'
-            instance += 1
-
-        instance = 0
-        while instance < self.size:
-            square += ' ' * self.position[0]
-            square += '#' * self.size
-            square += '\n'
-            instance += 1
-
-        return square[:-1]
+        """Define the print() representation of a Square."""
+        if self.__size != 0:
+            [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            if i != self.__size - 1:
+                print("")
+        return ("")
