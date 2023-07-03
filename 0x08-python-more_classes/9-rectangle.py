@@ -7,22 +7,6 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = '#'
 
-    @classmethod
-    def square(cls, size=0):
-        """Returns new rectangle instance with width == height == size"""
-        return cls(size, size)
-    
-    @staticmethod  # define a method that belongs to a class
-    def bigger_or_equal(rect_1, rect_2):
-        """Compare two rectangles with their instances."""
-        if type(rect_1) is not Rectangle:
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if type(rect_2) is not Rectangle:
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() >= rect_2.area():
-            return rect_1
-        return
-
     def __init__(self, width, height):
         """
         Initializes a rectangle
@@ -92,8 +76,9 @@ class Rectangle:
         """prints rectangle using #"""
         string = ""  # empty string
         if self.__width != 0 and self.__height != 0:
-            string += "\n".join(str(self.print_symbol) * self.__width
-                                for rectangle in range(self.__height))
+            for rectangle in range(self.height - 1):
+                string += str(self.print_symbol) * self.width + "\n"
+            string += str(self.print_symbol) * self.width
         return string
 
     def __repr__(self):
@@ -102,5 +87,21 @@ class Rectangle:
 
     def __del__(self):
         """Called when the rectangle has been removed"""
-        print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
+
+    @staticmethod  # define a method that belongs to a class
+    def bigger_or_equal(rect_1, rect_2):
+        """Compare two rectangles with their instances."""
+        if type(rect_1) is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if type(rect_2) is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """Returns new rectangle instance with width == height == size"""
+        return cls(size, size)
