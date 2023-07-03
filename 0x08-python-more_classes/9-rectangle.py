@@ -11,6 +11,7 @@ class Rectangle:
     def square(cls, size=0):
         """Returns new rectangle instance with width == height == size"""
         return cls(size, size)
+    
     @staticmethod  # define a method that belongs to a class
     def bigger_or_equal(rect_1, rect_2):
         """Compare two rectangles with their instances."""
