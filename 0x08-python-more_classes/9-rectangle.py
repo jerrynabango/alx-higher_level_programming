@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-"""A square is a rectangle"""
+"""
+Defines a class Rectangle
+"""
 
 
 class Rectangle:
-    """Defines a rectangle"""
+    """Representation of a rectangle"""
 
     number_of_instances = 0
-    print_symbol = '#'
+    print_symbol = "#"
 
     @classmethod
     def square(cls, size=0):
@@ -24,14 +26,16 @@ class Rectangle:
             return rect_1
         return rect_2
 
-    def __init__(self, width, height):
-        """
-        Initializes a rectangle
-        instance: width, height
-        """
-        Rectangle.number_of_instances += 1
+    def __init__(self, width=0, height=0):
+        """Initializes the rectangle"""
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
+
+    def __del__(self):
+        """Called when the rectangle has been removed"""
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
 
     @property
     def width(self):
@@ -47,10 +51,10 @@ class Rectangle:
         Setter method for width
         private attribute: __width
         """
-        if type(value) is not int:  # Identify the data type if its an integer
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
-            raise ValueError("width must be >=0")
+            raise ValueError("width must be >= 0")
         self.__width = value
 
     @property
@@ -67,10 +71,10 @@ class Rectangle:
         Setter method for height
         private attribute: __height
         """
-        if type(value) is not int:  # Identify the data type if its an integer
+        if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("height must be >=0")
+            raise ValueError("height must be >= 0")
         self.__height = value
 
     def area(self):
@@ -91,12 +95,12 @@ class Rectangle:
 
     def __str__(self):
         """prints rectangle using #"""
-        string = ""  # empty string
+        string = ""
         if self.__width != 0 and self.__height != 0:
             string += "\n".join(str(self.print_symbol) * self.__width
-                                for rectangle in range(self.__height))
+                                for j in range(self.__height))
         return string
 
     def __repr__(self):
         """String representation of the rectangle"""
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
