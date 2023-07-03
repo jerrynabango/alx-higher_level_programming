@@ -3,16 +3,21 @@
 
 
 class Rectangle:
-    def __init__(self, width, height):
+    """defines a rectangle
+    private attributes: __width, __height"""
+    def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
 
     @property
     def width(self):
+        """Getter method for width"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Setter method for the width
+        private attribute: __width"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
@@ -21,10 +26,13 @@ class Rectangle:
 
     @property
     def height(self):
+        """Getter method for height"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Setter method for height
+        private attribute: __height"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
