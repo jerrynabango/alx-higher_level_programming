@@ -90,7 +90,7 @@ class Rectangle:
 
     def __repr__(self):
         """String representation of the rectangle"""
-        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+        return "Rectangle({}, {})".format(self.__width, self.__height)
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
