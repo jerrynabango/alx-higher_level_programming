@@ -9,7 +9,10 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """Initializes the rectangle"""
+        """
+        Initializes the rectangle
+        instance: width, height
+        """
         Rectangle.number_of_instances += 1
         self.width = width
         self.height = height
@@ -28,7 +31,7 @@ class Rectangle:
         Setter method for width
         private attribute: __width
         """
-        if type(value) is not int:
+        if type(value) is not int:  # Identify the data type if its an integer
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -48,7 +51,7 @@ class Rectangle:
         Setter method for height
         private attribute: __height
         """
-        if type(value) is not int:
+        if type(value) is not int:  # Identify the data type if its an integer
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
