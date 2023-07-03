@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Change representation"""
+"""Compare rectangles"""
 
 
 class Rectangle:
