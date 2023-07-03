@@ -7,6 +7,21 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = '#'
 
+    @classmethod
+    def square(cls, size=0):
+        """Returns new rectangle instance with width == height == size"""
+        return cls(size, size)
+    @staticmethod  # define a method that belongs to a class
+    def bigger_or_equal(rect_1, rect_2):
+        """Compare two rectangles with their instances."""
+        if type(rect_1) is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if type(rect_2) is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        return
+
     def __init__(self, width, height):
         """
         Initializes a rectangle
@@ -89,19 +104,3 @@ class Rectangle:
         """Called when the rectangle has been removed"""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-
-    @staticmethod  # define a method that belongs to a class
-    def bigger_or_equal(rect_1, rect_2):
-        """Compare two rectangles with their instances."""
-        if type(rect_1) is not Rectangle:
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if type(rect_2) is not Rectangle:
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() >= rect_2.area():
-            return rect_1
-        return
-
-    @classmethod
-    def square(cls, size=0):
-        """Returns new rectangle instance with width == height == size"""
-        return cls(size, size)
