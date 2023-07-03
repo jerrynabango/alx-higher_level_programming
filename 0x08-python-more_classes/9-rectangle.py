@@ -75,7 +75,7 @@ class Rectangle:
 
     def __str__(self):
         """prints rectangle using #"""
-        string = ""
+        string = ""  #empty string
         if self.__width != 0 and self.__height != 0:
             for rectangle in range(self.height - 1):
                 string += str(self.print_symbol) * self.width + "\n"
