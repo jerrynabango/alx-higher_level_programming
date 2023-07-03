@@ -84,8 +84,9 @@ class Rectangle:
         """prints rectangle using #"""
         string = ""
         if self.__width != 0 and self.__height != 0:
-            string += "\n".join(str(self.print_symbol) * self.__width
-                                for j in range(self.__height))
+            for rectangle in range(self.height - 1):
+                string += str(self.print_symbol) * self.width + "\n"
+            string += str(self.print_symbol) * self.width
         return string
 
     def __repr__(self):
