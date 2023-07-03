@@ -15,16 +15,16 @@ class Rectangle:
         """Returns new rectangle instance with width == height == size"""
         return cls(size, size)
 
-    @staticmethod  # define a method that belongs to a class
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Compare two rectangles with their instances."""
+        """returns the biggest rectangle based on the area"""
         if type(rect_1) is not Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if type(rect_2) is not Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() >= rect_2.area():
             return rect_1
-        return
+        return rect_2
 
     def __init__(self, width, height):
         """
@@ -97,12 +97,11 @@ class Rectangle:
         return (self.__width + self.__height) * 2
 
     def __str__(self):
-        """prints rectangle using #"""
-        string = ""  # empty string
+        """returns printable string representation of the rectangle"""
+        string = ""
         if self.__width != 0 and self.__height != 0:
-            for rectangle in range(self.height - 1):
-                string += str(self.print_symbol) * self.width + "\n"
-            string += str(self.print_symbol) * self.width
+            string += "\n".join(str(self.print_symbol) * self.__width
+                                for j in range(self.__height))
         return string
 
     def __repr__(self):
