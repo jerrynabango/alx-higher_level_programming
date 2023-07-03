@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-"""
-Defines a class Rectangle
-"""
+"""A square is a rectangle"""
 
 
 class Rectangle:
-    """Representation of a rectangle"""
+    """Defines a rectangle"""
 
     number_of_instances = 0
-    print_symbol = "#"
+    print_symbol = '#'
 
     @classmethod
     def square(cls, size=0):
@@ -17,7 +15,7 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """returns the biggest rectangle based on the area"""
+        """Compare two rectangles with their instances."""
         if type(rect_1) is not Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if type(rect_2) is not Rectangle:
@@ -31,14 +29,9 @@ class Rectangle:
         Initializes a rectangle
         instance: width, height
         """
+        Rectangle.number_of_instances += 1
         self.width = width
         self.height = height
-        Rectangle.number_of_instances += 1
-
-    def __del__(self):
-        """Called when the rectangle has been removed"""
-        print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
 
     @property
     def width(self):
@@ -97,11 +90,11 @@ class Rectangle:
         return (self.__width + self.__height) * 2
 
     def __str__(self):
-        """returns printable string representation of the rectangle"""
-        string = ""
+        """prints rectangle using #"""
+        string = ""  # empty string
         if self.__width != 0 and self.__height != 0:
             string += "\n".join(str(self.print_symbol) * self.__width
-                                for j in range(self.__height))
+                                for rectangle in range(self.__height))
         return string
 
     def __repr__(self):
