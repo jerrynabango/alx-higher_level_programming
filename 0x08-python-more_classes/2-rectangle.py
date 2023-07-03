@@ -64,4 +64,6 @@ class Rectangle:
         Total distance of the rectangle(width + height) * 2
         private attribute: __width, __height
         """
+        if self.__width == 0 and self.__height == 0:
+            return 0
         return (self.__width + self.__height) * 2
