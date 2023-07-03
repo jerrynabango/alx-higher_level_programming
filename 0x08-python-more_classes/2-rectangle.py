@@ -3,7 +3,8 @@
 
 
 class Rectangle:
-    def __init__(self, width, height):
+    """defines a rectangle"""
+    def __init__(self, width=0, height=0):
         """
         Initializes a Rectangle.
         instances: self.width, self.height
