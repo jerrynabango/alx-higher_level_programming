@@ -31,14 +31,14 @@ class Rectangle:
         Initializes a rectangle
         instance: width, height
         """
-        Rectangle.number_of_instances += 1
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     def __del__(self):
         """Called when the rectangle has been removed"""
-        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
 
     @property
     def width(self):
