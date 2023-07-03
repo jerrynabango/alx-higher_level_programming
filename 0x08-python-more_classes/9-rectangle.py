@@ -92,9 +92,8 @@ class Rectangle:
         """prints rectangle using #"""
         string = ""  # empty string
         if self.__width != 0 and self.__height != 0:
-            for rectangle in range(self.height - 1):
-                string += str(self.print_symbol) * self.width + "\n"
-            string += str(self.print_symbol) * self.width
+            string += "\n".join(str(self.print_symbol) * self.__width
+                                for rectangle in range(self.__height))
         return string
 
     def __repr__(self):
@@ -103,5 +102,5 @@ class Rectangle:
 
     def __del__(self):
         """Called when the rectangle has been removed"""
-        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
