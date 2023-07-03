@@ -19,11 +19,6 @@ class Rectangle:
         self.height = height
         Rectangle.number_of_instances += 1
 
-    def __del__(self):
-        """Called when the rectangle has been removed"""
-        print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
-
     @property
     def width(self):
         """"
@@ -92,6 +87,11 @@ class Rectangle:
     def __repr__(self):
         """String representation of the rectangle"""
         return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """Called when the rectangle has been removed"""
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
