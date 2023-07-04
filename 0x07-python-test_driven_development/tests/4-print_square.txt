@@ -1,0 +1,69 @@
+Print square
+===================================
+
+4-print_square.py
+===================================
+from 4-print_square import print_square function:
+	>>> print_square = __import__('4-print_square').print_square
+
+Invalid square size(TypeError & ValueError)
+::
+	>>> print_square(6.12)
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+	>>> print_square(6.12)
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+	>>> print_square(-6.12)
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+	>>> print_square(-6)
+	Traceback (most recent call last):
+		...
+	ValueError: size must be >= 0
+
+	>>> print_square()	#doctest: +NORMALIZE_WHITESPACE
+	Traceback (most recent call last):
+		...
+	TypeError: print_square() missing 1 required positional argument:
+	 'size'
+
+	>>> print_square([])
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+	>>> print_square("")
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+square
+::
+	>>> print_square(1)
+	#
+
+	>>> print_square(0)
+
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+	>>> print_square(10)
+    	##########
+    	##########
+    	##########
+    	##########
+    	##########
+    	##########
+    	##########
+    	##########
+    	##########
+    	##########
