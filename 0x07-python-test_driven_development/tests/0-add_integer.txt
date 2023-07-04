@@ -1,0 +1,54 @@
+integers addition
+======================
+
+add_integer.py
+======================
+
+from 0-add_integer import add_integer:
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Valid args
+::
+	>>> add_integer(48, 50)
+	98
+
+Invalid args
+::
+	>>> add_integer([], 2)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+	>>> add_integer('a', 2)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+	>>> add_integer(1, [])
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+	>>> add_integer(1, 'b')
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+Infinity floats
+::
+	>>> add_integer(float('inf'))
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer
+
+Not a Number (NaN)
+::
+	>>> add_integer(3, float('NaN'))
+	Traceback (most recent call last):
+		...
+	ValueError: cannot convert float NaN to integer
+
+	>>> add_integer(float('NaN'))
+	Traceback (most recent call last):
+		...
+	ValueError: cannot convert float NaN to integer
