@@ -2,6 +2,6 @@
 """Copy a list object"""
 
 
-def copy_list(lista):
+def copy_list(list):
     """Function that returns a copy of a list"""
-    return lista.copy()
+    return list.copy()
