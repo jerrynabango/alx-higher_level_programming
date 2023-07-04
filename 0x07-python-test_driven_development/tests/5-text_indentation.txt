@@ -1,0 +1,72 @@
+Text indentation
+=================================
+
+5-text_indentation.py
+================================
+
+from 5-text_indentation import text_indentation:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Invalid Data type
+::
+
+	>>> text_indentation(2)
+	Traceback (most recent call last):
+		...
+	TypeError: text must be a string
+
+Identify newline:
+	 >>> text_indentation("Do you have back-end skills?\n")
+	 Do you have back-end skills?
+	 <BLANKLINE>
+	 <BLANKLINE>
+
+Identify spaces
+::
+
+	>>> text_indentation(" Back-end Engineer.")
+	Back-end Engineer.
+	<BLANKLINE>
+
+	>>> text_indentation("Back-end Engineer. ")
+	Back-end Engineer.
+	<BLANKLINE>
+
+Identify no-spaces
+::
+	>>> text_indentation("Company Requirements: Any issue with details given? You will be called back")
+	Company Requirements:
+	<BLANKLINE>
+	Any issue with details given?
+	<BLANKLINE>
+	You will be called back
+
+Identify special characters and increase the number of spaces
+::
+	>>> text_indentation("Requirements:  Programming knowledge?  Will contact you.  ")
+	Requirements:
+	<BLANKLINE>
+	Programming knowledge?
+	<BLANKLINE>
+	Will contact you.
+	<BLANKLINE>
+
+Identify special characters
+::
+	>>> text_indentation("ALX programs.Software Engineering?Course details:")
+	ALX programs.
+	<BLANKLINE>
+	Software Engineering?
+	<BLANKLINE>
+	Course details:
+	<BLANKLINE>
+
+Identify spaces after the special characters
+::
+	>>> text_indentation("Front-end or Back-end Engineer: Do you have the skills? You will start tomorrow. ")
+	Front-end or Back-end Engineer:
+	<BLANKLINE>
+	Do you have the skills?
+	<BLANKLINE>
+	You will start tomorrow.
+	<BLANKLINE>
