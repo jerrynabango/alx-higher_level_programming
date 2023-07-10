@@ -7,52 +7,95 @@ Integer integer_validator
 from 7-base_geometry import BaseGeometry
 	>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
-Calculations for the base geometry
+Checking for docstring
 ::
+         >>> m = __import__("7-base_geometry").__doc__
+         >>> len(m) > 1
+         True
+         >>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+         >>> len(c) > 1
+         True
+	 >>> mod1 = __import__("7-base_geometry").BaseGeometry.area.__doc__
+	 >>> len(mod1) > 1
+	 True
+	 >>> mod2 = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+         >>> len(mod2) > 1
+         True
 
-    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-    >>> pol = BaseGeometry()
-    >>> pol.integer_validator("my_int", 12)
-    >>> pol.integer_validator("width", 89)
+Failed Area:
+	 >>> b = BG()
+	 >>> b.area()
+	 Traceback (most recent call last):
+	 ...
+	 Exception: area() is not implemented
 
-Args
+args
 ::
-    >>> pol.integer_validator("distance")
-    Traceback (most recent call last):
-      ...
-    TypeError: integer_validator() missing 1 required positional argument: 'value'
-    >>> pol.integer_validator()
-    Traceback (most recent call last):
-      ...
-    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
-    >>> pol.size()
-    Traceback (most recent call last):
-      ...
-    AttributeError: 'BaseGeometry' object has no attribute 'size'
+   >>> b.integer_validator("integer", 1, 2)
+	 Traceback (most recent call last):
+         ...
+	 TypeError: integer_validator() takes 3 positional arguments but 4 were given
+   >>> b.integer_validator()
+	 Traceback (most recent call last):
+         ...
+	 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+	 >>> b.area(1)
+	 Traceback (most recent call last):
+         ...
+	 TypeError: area() takes 1 positional argument but 2 were given
+   >>> b.integer_validator("integer")
+	 Traceback (most recent call last):
+         ...
+	 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-Check value must be an integer and greater than zero
+Check integer and integer less than zero
 ::
-    >>> pol.integer_validator("width", 89.01)
-    Traceback (most recent call last):
-      ...
-    TypeError: width must be an integer
-    >>> pol.integer_validator("name", "John")
-    Traceback (most recent call last):
-      ...
-    TypeError: name must be an integer
-    >>> pol.integer_validator("age", 0)
-    Traceback (most recent call last):
-      ...
-    ValueError: age must be greater than 0
-    >>> pol.integer_validator("distance", -4)
-    Traceback (most recent call last):
-      ...
-    ValueError: distance must be greater than 0
-    >>> pol.area()
-    Traceback (most recent call last):
-      ...
-    Exception: area() is not implemented
-    >>> pol.integer_validator(9, 4)
-    Traceback (most recent call last):
-      ...
-    Exception: 'name' must be a string
+	 >>> b.integer_validator("integer", 23)
+	 >>> b.integer_validator("integer", 0)
+	 Traceback (most recent call last):
+         ...
+         ValueError: integer must be greater than 0
+	 >>> b.integer_validator("integer", -5)
+	 Traceback (most recent call last):
+         ...
+         ValueError: integer must be greater than 0
+	 >>> b.integer_validator("bool", True)
+	 Traceback (most recent call last):
+         ...
+         TypeError: bool must be an integer
+	 >>> b.integer_validator("float", 1.5)
+         Traceback (most recent call last):
+         ...
+         TypeError: float must be an integer
+	 >>> b.integer_validator("complex", complex(1, 1))
+         Traceback (most recent call last):
+         ...
+         TypeError: complex must be an integer
+   >>> b.integer_validator("bytearrays", bytearray(b"bytes"))
+         Traceback (most recent call last):
+         ...
+         TypeError: bytearrays must be an integer
+   >>> b.integer_validator("frozenset", frozenset(["test", "tdd"]))
+         Traceback (most recent call last):
+         ...
+         TypeError: frozenset must be an integer
+   >>> b.integer_validator("tuple", (6, 3))
+         Traceback (most recent call last):
+         ...
+         TypeError: tuple must be an integer
+	 >>> b.integer_validator("string", "tests")
+         Traceback (most recent call last):
+         ...
+         TypeError: string must be an integer
+	 >>> b.integer_validator("list", [1, 2, 3])
+	 Traceback (most recent call last):
+         ...
+         TypeError: list must be an integer
+	 >>> b.integer_validator("dict", {"cars": "twenty three"})
+         Traceback (most recent call last):
+         ...
+         TypeError: dict must be an integer
+	 >>> b.integer_validator("set", {"back", "end"})
+         Traceback (most recent call last):
+         ...
+         TypeError: must be an integer
