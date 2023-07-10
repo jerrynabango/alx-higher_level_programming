@@ -1,0 +1,3 @@
+ # It's a feature of object-oriented programming that allows a class to inherit attributes and methods from another class. The class being inherited from is called the superclass or base class, and the class inheriting from it is called the subclass or derived class.
+
+# Inheritance is used to create a hierarchy of classes, where subclasses inherit the characteristics of the superclass while adding their own unique features. This promotes code reuse, modularity, and extensibility in software development.
