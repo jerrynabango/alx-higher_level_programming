@@ -8,4 +8,7 @@ def class_to_json(obj):
     (list, dictionary, string, integer and boolean) for
     JSON serialization of an object
     """
-    return (obj).__dict__
+    try:
+        return obj.__dict__
+    except AttributeError:
+        return dict()
