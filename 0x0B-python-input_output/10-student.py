@@ -14,7 +14,7 @@ class Student:
         """retrieves a dictionary representation of a Student instance"""
         if type(attrs) == list:
             dictionary = {student: self.__dict__[student]
-                     for student in attrs if student in self.__dict__}
+                          for student in attrs if student in self.__dict__}
             return dictionary
         else:
             return self.__dict__
