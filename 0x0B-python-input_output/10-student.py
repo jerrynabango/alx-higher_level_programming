@@ -13,8 +13,8 @@ class Student:
     def to_json(self, attrs=None):
         """retrieves a dictionary representation of a Student instance"""
         if type(attrs) == list:
-            props = {a: self.__dict__[a]
-                     for a in attrs if a in self.__dict__}
-            return props
+            dictionary = {student: self.__dict__[student]
+                     for student in attrs if student in self.__dict__}
+            return dictionary
         else:
             return self.__dict__
