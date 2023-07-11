@@ -19,7 +19,6 @@ def pascal_triangle(n):
         while size < len(integer_1) - 1:
             integer_2.append(integer_1[size] + integer_1[size + 1])
             size += 1
-
         integer_2.append(1)
         triangle.append(integer_2)
 
