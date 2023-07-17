@@ -1,15 +1,26 @@
-0-main.py, my_file_0.txt
-1-main.py, my_first_file.txt
-2-main.py, file_append.txt
+0-main.py
+my_file_0.txt
+1-main.py
+my_first_file.txt
+2-main.py
+file_append.txt
 3-main.py
 4-main.py
-5-main.py, my_dict.json, my_list.json, my_set.json
-6-main.py. my_fake.json
+5-main.py
+my_dict.json
+my_list.json
+my_set.json
+6-main.py
+my_fake.json
 add_item.json
-8-main.py, 8-main_2.py, 8-my_class_2.py, 8-my_class.py
+8-main.py
+8-main_2.py
+8-my_class_2.py
+8-my_class.py
 9-main.py
 10-main.py
 11-main.py
 12-main.py
-100-main.py, append_after_100.txt
+100-main.py
+append_after_100.txt
 101-generator.py
