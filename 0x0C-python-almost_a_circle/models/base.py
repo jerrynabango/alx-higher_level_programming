@@ -20,11 +20,8 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """changes the list of dictionaries to json string"""
-        if list_dictionaries is None or\
-                len(list_dictionaries) == 0 or\
-                type(list_dictionaries) != list:
-            list_dictionaries = []
+        """Changes the list of dictionaries to a JSON string."""
+        list_dictionaries = list_dictionaries if isinstance(list_dictionaries, list) else []
         return json.dumps(list_dictionaries)
 
     @staticmethod
@@ -39,7 +36,7 @@ class Base:
         """saves the list of objects to a file in the given list_objs"""
         list_objs = [] if list_objs is None else list_objs
         filename = '{}.json'.format(cls.__name__)
-        with open(filename, mode='w', encoding='utf-8') as file:
+        with open(filename, "w") as file:
             file.write(
                 cls.to_json_string([o.to_dictionary() for o in list_objs])
             )
@@ -60,7 +57,7 @@ class Base:
         filename = "%s.json" % cls.__name__
         objs = []
         if os.path.exists(filename):
-            with open(filename, encoding='utf-8') as file:
+            with open(filename) as file:
                 objs = cls.from_json_string(file.read())
             return [cls.create(**obj) for obj in objs]
         return objs
@@ -78,7 +75,7 @@ class Base:
         else:
             list_objs = []
 
-        with open(filename, mode='w', encoding='utf-8', newline='') as file:
+        with open(filename, "w",newline="") as file:
             writer = csv.DictWriter(file, fieldnames=header)
             writer.writeheader()
             writer.writerows(map(lambda x: x.to_dictionary(), list_objs))
@@ -89,7 +86,7 @@ class Base:
         filename = "%s.csv" % cls.__name__
         objs = []
         if os.path.exists(filename):
-            with open(filename, encoding='utf-8') as file:
+            with open(filename) as file:
                 reader = csv.DictReader(file)
                 for line in reader:
                     obj = {}
