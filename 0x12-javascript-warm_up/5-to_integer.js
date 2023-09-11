@@ -7,7 +7,8 @@
  */
 
 //parseInt: function that parses a string and returns a number
-const arg = parseInt(process.argv[2]);
+//math.floor(): function that converts a string to a number
+const integer = Math.floor(Number(process.argv[2]));
 
 // Using template literal
-console.log(isNaN(num) ? 'Not a number' : `My number: ${num}`);
+console.log(isNaN(integer) ? 'Not a number' : `My number: ${integer}`);
