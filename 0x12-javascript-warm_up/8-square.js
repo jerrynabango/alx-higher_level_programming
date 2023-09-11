@@ -7,20 +7,16 @@
  */
 
 // math.floor: function used to convert a number to an integer value
-const size = Math.floor(Number(process.argv[2]));
+const square = Math.floor(Number(process.argv[2]));
 
-if (isNaN(size)) {
+if (isNaN(square)) {
   console.log('Missing square');
 } else {
-  let arg1 = 0;
-  while (arg1 < size) {
-    let sizeOfSquare = '';
-    let arg2 = 0;
-    while (arg2 < size) {
-      sizeOfSquare += 'X';
-      arg2++;
+  for (let arg1 = 0; arg1 < square; arg1++) {
+    let size = '';
+    for (let arg2 = 0; arg2 < square; arg2++) {
+      size += 'X';
     }
-    console.log(sizeOfSquare);
-    arg1++;
+    console.log(size);
   }
 }
