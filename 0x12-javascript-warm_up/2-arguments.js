@@ -7,11 +7,11 @@
  * Otherwise, it prints "Arguments found."
  */
 
-const numberOfArguments = process.argv.length - 2;
+const message = process.argv.length - 2;
 // Strict Equality comparison (===)
-if (numberOfArguments === 0) {
+if (message === 0) {
 	console.log('No argument');
-} else if (numberOfArguments === 1) {
+} else if (message === 1) {
 	console.log('Argument found');
 } else {
 	console.log('Arguments found');
