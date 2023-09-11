@@ -6,9 +6,10 @@
  * The second argument is the second integer
  */
 
-function add (a, b) {
-	if (a === undefined || b === undefined) { return 'NaN'; }
-	return a + b;
-  }
+const [a, b] = process.argv.slice(2);
 
-console.log(add(Number(process.argv[2]), Number(process.argv[3])));
+function add (a, b) {
+  return a + b;
+}
+
+console.log(add(a, b));
