@@ -8,12 +8,19 @@
 
 // math.floor: function used to convert a number to an integer value
 const square = Math.floor(Number(process.argv[2]));
+
 if (isNaN(square)) {
   console.log('Missing size');
 } else {
-  for (let arg1 = 0; arg1 < square; arg1++) {
+  let arg1 = 0;
+  while (arg1 < square) {
     let sizeOfSquare = '';
-    for (let arg2 = 0; arg2 < square; arg2++) sizeOfSquare += 'X';
+    let arg2 = 0;
+    while (arg2 < square) {
+      sizeOfSquare += 'X';
+      arg2++;
+    }
     console.log(sizeOfSquare);
+    arg1++;
   }
 }
