@@ -9,7 +9,7 @@
 const valueOfArgument = process.argv[2];
 
 if (valueOfArgument === undefined) {
-	console.log('No argument');
-} else {
 	console.log(valueOfArgument);
+} else {
+	console.log(`No argument`);
 }
