@@ -2,6 +2,8 @@
 
 // Update this script by adding a new function incr that increments the integer value.
 
-exports.addMeMaybe = function (number, theFunction) {
+const addMeMaybe = function (number, theFunction) {
 	theFunction(++number);
 };
+
+module.exports = { addMeMaybe };
