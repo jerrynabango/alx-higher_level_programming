@@ -1,10 +1,16 @@
 #!/usr/bin/node
 
-//parseInt: function that parses a string and returns a number
-const integer = parseInt(process.argv[2]);
+/**
+ * script that prints My number: <first argument converted in integer>
+ * if the first argument can be converted to an integer:
+ * If the argument can’t be converted to an integer, print “Not a number”
+ */
 
-if (Number.isNaN(integer)) {
+//parseInt: function that parses a string and returns a number
+const arg = parseInt(process.argv[2]);
+
+if (Number.isNaN(arg)) {
   console.log('Not a number');
 } else {
-  console.log(`My number: ${integer}`);
+  console.log(`My number: ${arg}`);
 }
