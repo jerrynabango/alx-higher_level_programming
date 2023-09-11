@@ -9,7 +9,7 @@
 const [a, b] = process.argv.slice(2);
 
 function add (a, b) {
-  return a + b;
+  return Number(a) + Number(b);
 }
 
 console.log(add(a, b));
