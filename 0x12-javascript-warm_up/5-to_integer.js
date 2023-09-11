@@ -6,10 +6,10 @@
  */
 
 //parseInt: function that parses a string and returns a number
-const integer = parseInt(process.argv[2]);
+const myNumber = parseInt(process.argv[2]);
 
-if (Number.isNaN(integer)) {
+if (Number.isNaN(myNumber)) {
   console.log('Not a number');
 } else {
-  console.log(`My number: ${integer}`);
+  console.log(`My number: ${myNumber}`);
 }
