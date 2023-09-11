@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-// Update this script by adding a new function incr that increments the integer value.
+// function that increments and calls a function.
 
 const addMeMaybe = function (number, theFunction) {
 	theFunction(++number);
