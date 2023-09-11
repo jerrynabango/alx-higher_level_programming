@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-// function that increments and calls a function.
+// Function that increments and calls a function.
 
 const addMeMaybe = function (number, theFunction) {
 	theFunction(++number);
