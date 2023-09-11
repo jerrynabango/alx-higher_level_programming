@@ -9,7 +9,6 @@
 */
 
 const numberOfArguments = process.argv.length - 2;
-
 // Strict Equality comparison (===)
 if (numberOfArguments === 0) {
 	console.log('No argument');
