@@ -6,9 +6,9 @@
  * Factorial of NaN is 1
  */
 
-function factorial (argument) {
-	if (isNaN(argument) || argument === 1) { return (1); }
-	return argument * factorial(argument - 1);
+function factorial (n) {
+	if (isNaN(n) || n === 1) { return (1); }
+	return n * factorial(n - 1);
   }
   
 console.log(factorial(process.argv[2]));
