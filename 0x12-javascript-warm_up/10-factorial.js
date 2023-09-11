@@ -1,8 +1,14 @@
 #!/usr/bin/node
 
-function search (arr) {
-	if (arr.length < 2) { return (0); }
-	return arr.map(Number).sort((x, y) => x - y)[arr.length - 2];
-  }
+/**
+ * script that computes and prints a factorial
+ * The first argument is integer (argument can be cast as integer) used for computing the factorial
+ * Factorial of NaN is 1
+ */
+
+function factorial (arr) {
+	if (isNaN(arr) || arr === 1) { return (1); }
+	return arr * factorial(arr - 1);
+}
   
-  console.log(search(process.argv.slice(2)));
+console.log(factorial(process.argv[2]));
