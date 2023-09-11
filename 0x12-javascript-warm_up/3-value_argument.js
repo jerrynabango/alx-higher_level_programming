@@ -10,6 +10,6 @@ const valueOfArgument = process.argv[2];
 
 if (valueOfArgument) {
 	console.log(valueOfArgument);
-} else (valueOfArgument === undefined) {
+} else if (valueOfArgument === undefined) {
 	console.log(`No argument`);
 }
