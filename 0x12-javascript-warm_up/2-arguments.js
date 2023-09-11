@@ -7,8 +7,8 @@
 * Otherwise, print “Arguments found”
 */
 
-const numberOfArguments = process.argv.length - 2;
 // Strict Equality comparison (===)
+const numberOfArguments = process.argv.length - 2;
 if (numberOfArguments === 0) {
 	console.log('No argument');
 } else if (numberOfArguments === 1) {
