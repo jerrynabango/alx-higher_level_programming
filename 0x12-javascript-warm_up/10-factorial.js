@@ -6,9 +6,11 @@
  * Factorial of NaN is 1
  */
 
-function factorial (integer) {
-	if (isNaN(integer) || integer === 1) { return (1); }
-	return integer * factorial(integer - 1);
+if (process.argv.length < 2) {
+	console.log(0);
+} else {
+	const list = process.argv.map(Number)
+	  .slice(2, process.argv.length)
+	  .sort((a, b) => a - b);
+	console.log(list[list.length - 2]);
 }
-  
-console.log(factorial(process.argv[2]));
