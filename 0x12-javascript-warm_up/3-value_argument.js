@@ -8,8 +8,8 @@
 
 const valueOfArgument = process.argv[2];
 
-if (valueOfArgument === undefined) {
+if (valueOfArgument) {
 	console.log(valueOfArgument);
-} else {
+} else (valueOfArgument === undefined) {
 	console.log(`No argument`);
 }
