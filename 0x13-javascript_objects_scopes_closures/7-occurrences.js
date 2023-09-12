@@ -4,9 +4,9 @@
 exports.nbOccurences = function (list, searchElement) {
 	let numberOfOccurrences = 0;
 	for (let number = 0; number < list.length; number++) {
-	  if (searchElement === list[number]) {
-		numberOfOccurrences++;
-	  }
+		if (searchElement === list[number]) {
+			numberOfOccurrences++;
+		}
 	}
 	return numberOfOccurrences;
 };
