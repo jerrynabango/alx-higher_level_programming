@@ -10,4 +10,5 @@ for (const [numberOfOccurrences, userIds] of Object.entries(dict)) {
     sort[userIds].push(numberOfOccurrences);
   }
 }
+
 console.log(sort);
