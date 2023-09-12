@@ -4,10 +4,10 @@
 const dict = require('./101-data').dict;
 const sort = {};
 for (const [numberOfOccurrences, userIds] of Object.entries(dict)) {
-  if (sort[userIds] === undefined) {
+	if (sort[userIds] === undefined) {
     sort[userIds] = [numberOfOccurrences];
   } else {
-    sort[userIds].push(numberOfOccurrences);
+	sort[userIds].push(numberOfOccurrences);
   }
 }
 
