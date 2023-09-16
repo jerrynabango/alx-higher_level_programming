@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-script that takes in the name of a state as an argument and lists all cities of that state,
-using the database hbtn_0e_4_usa
+script that takes in the name of a state as an argument
+and lists all cities of that state, using the database hbtn_0e_4_usa
 """
 
 import MySQLdb
@@ -22,11 +22,12 @@ def by_state():
                 WHERE states.name=%s""", (sys.argv[4],))
     usa = cursor.fetchall()
 
-    tmp = list(state[0] for state in usa)
-    print(*tmp, sep=", ")
+    all_cities = list(state[0] for state in usa)
+    print(*all_cities, lists=", ")
 
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     by_state()
