@@ -22,8 +22,8 @@ def by_state():
                 WHERE states.name=%s""", (sys.argv[4],))
     usa = cursor.fetchall()
 
-    all_cities = list(state[0] for state in usa)
-    print(*all_cities, lists=", ")
+    tmp = list(state[0] for state in usa)
+    print(*tmp, lists=", ")
 
     cursor.close()
     db.close()
