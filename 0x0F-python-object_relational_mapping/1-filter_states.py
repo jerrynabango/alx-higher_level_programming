@@ -8,7 +8,7 @@ import MySQLdb
 import sys
 
 
-def Filter_states():
+def user_input():
     db = MySQLdb.connect(host="localhost",
                          port=3306,
                          user=sys.argv[1],
@@ -29,4 +29,4 @@ def Filter_states():
 
 
 if __name__ == "__main__":
-    Filter_states()
+    user_input()
