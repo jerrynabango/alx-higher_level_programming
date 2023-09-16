@@ -7,7 +7,7 @@ and an instance Base = declarative_base():
 from model_state import State, Base
 import sys
 
-from sqlalchemy import create_engine
+from sqlalchemy import (create_engine)
 
 
 def First_state_model():
