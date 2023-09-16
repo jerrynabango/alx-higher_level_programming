@@ -23,7 +23,7 @@ def by_state():
     usa = cursor.fetchall()
 
     tmp = list(state[0] for state in usa)
-    print(*tmp, sep=", ")
+    print(*tmp, lists_sep=", ")
 
     cursor.close()
     db.close()
