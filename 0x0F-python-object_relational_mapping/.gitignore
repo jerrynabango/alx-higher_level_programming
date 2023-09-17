@@ -2,3 +2,4 @@ select_states.sql
 4-cities_by_state.sql
 model_state.sql
 14-model_city_fetch_by_state.sql
+100-relationship_states_cities.sql
