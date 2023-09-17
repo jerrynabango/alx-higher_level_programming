@@ -1,36 +1,28 @@
 #!/usr/bin/python3
-
 """
-A script that prints the first State object from the database hbtn_0e_6_usa
+script that prints the first State object from the database hbtn_0e_6_usa
 """
 
-from sys import argv
-from sqlalchemy.engine import Engine
-
-from sqlalchemy.orm import Session
-from model_state import Base, State
-from sqlalchemy import create_engine
+from model_state import State, Base
+from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
+import sys
 
 
-def createEngine(args: list) -> Session:
-    """Create a database engine
-    Return:
-        Session (class)
-    """
-    engine: Engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost/{}'.format(args[0], args[1], args[2]),
-        pool_pre_ping=True
-    )
+def state_object():
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+
     Base.metadata.create_all(engine)
-    Session: sessionmaker = sessionmaker(bind=engine)
-    return Session()
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    object = session.query(State).first()
 
-
-if __name__ == '__main__':
-    session: Session = createEngine(argv[1:])
-    query: State = session.query(State).first()
-    if query:
-        print(f'{query.id}: {query.name}')
+    if object is None:
+        print("Nothing")
     else:
-        print('Nothing')
+        print(object.id, object.name, sep=": ")
+
+
+if __name__ == "__main__":
+    state_object()
