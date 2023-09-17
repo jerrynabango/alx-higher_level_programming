@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" prints the State object with the name passed as argument from the database
+"""
+city relationship
 """
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
