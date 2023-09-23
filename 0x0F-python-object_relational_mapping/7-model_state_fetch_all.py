@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-"""
-script that lists all State objects from the database hbtn_0e_6_usa
-"""
-
+"""Start link class to table in database"""
+import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
@@ -14,6 +12,5 @@ if _name_ == "_main_":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-
     for instance in session.query(State).order_by(State.id):
         print(instance.id, instance.name, sep=": ")
