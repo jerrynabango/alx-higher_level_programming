@@ -14,6 +14,7 @@ def cit_states():
     cursor.execute("""SELECT cities.id, cities.name, states.name FROM
                 cities INNER JOIN states ON states.id=cities.state_id""")
     states = cursor.fetchall()
+
     for state in states:
         print(state)
     cursor.close()
