@@ -3,12 +3,12 @@
 From city
 """
 
-import sys
 from relationship_state import State, Base
 from sqlalchemy import (create_engine)
 from relationship_city import City
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import relationship
+import sys
 
 
 def From():
