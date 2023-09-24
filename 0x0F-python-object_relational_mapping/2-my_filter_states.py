@@ -3,8 +3,8 @@
 Filter states by user input
 """
 
-import MySQLdb
 import sys
+import MySQLdb
 
 
 def all_states():
