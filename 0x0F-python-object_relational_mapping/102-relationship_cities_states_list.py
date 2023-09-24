@@ -3,11 +3,11 @@
 From city
 """
 
-from model_state import State, Base
-from sqlalchemy import (create_engine)
-from sqlalchemy.orm import sessionmaker
 import sys
-from model_city import City
+from relationship_state import State, Base
+from sqlalchemy import (create_engine)
+from relationship_city import City
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import relationship
 
 
