@@ -16,8 +16,8 @@ def via():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for instance in session.query(State).order_by(State.id):
-        print(instance.id, instance.name, sep=": ")
+    for states in session.query(State).order_by(State.id):
+        print(states.id, states.name, sep=": ")
 
 
 if __name__ == "__main__":
