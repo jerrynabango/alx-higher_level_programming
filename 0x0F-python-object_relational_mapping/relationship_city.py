@@ -4,14 +4,13 @@ City
 """
 
 from relationship_state import Base
-from sqlalchemy import Column,  MetaData, ForeignKey, String, Integer
+from sqlalchemy import Column, ForeignKey, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
 
 
 class City(Base):
     """
-    Defines the city that will be created
+    Defines a city with a given name and state
     """
     __tablename__ = "cities"
     id = Column(Integer, primary_key=True, unique=True, nullable=False)
