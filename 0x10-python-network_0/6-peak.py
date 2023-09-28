@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+"""
+Find a peak
+"""
+
+
 def find_peak(list_of_integers):
     """
     Defines the peak function for a list of Integers
