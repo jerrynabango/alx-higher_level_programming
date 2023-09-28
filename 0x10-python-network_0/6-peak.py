@@ -17,4 +17,5 @@ def find_peak(list_of_integers):
                 peak_1 = ls + 1
             else:
                 peak_2 = ls
+
         return list_of_integers[peak_1]
