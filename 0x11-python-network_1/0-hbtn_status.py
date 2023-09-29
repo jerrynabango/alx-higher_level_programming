@@ -8,6 +8,7 @@ import urllib.request
 
 def script():
     request = urllib.request.Request("https://alx-intranet.hbtn.io/status")
+
     with urllib.request.urlopen(request) as response:
         body = response.read()
         print("Body response:")
