@@ -8,17 +8,17 @@ import sys
 
 
 def time():
-    url = "https://api.github.com/repos/{}/{}/solve".format(
+    url = "https://api.github.com/repos/{}/{}/commits".format(
         sys.argv[2], sys.argv[1])
 
     takes = requests.get(url)
-    solve = takes.json()
+    argument = takes.json()
 
     try:
-        for argument in range(10):
+        for i in range(10):
             print("{}: {}".format(
-                solve[argument].get("sha"),
-                solve[argument].get("commit").get("author").get("name")))
+                argument[i].get("sha"),
+                argument[i].get("commit").get("author").get("name")))
     except IndexError:
         pass
 
