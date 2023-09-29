@@ -1,21 +1,21 @@
 #!/usr/bin/python3
 
 """
-Python script that takes in a letter and sends a
-POST request to http://0.0.0.0:5000/search_user with the letter as a parameter.
+A python script that takes in a letter and sends a POST request
+to http://0.0.0.0:5000/search_user with the letter as a parameter
 """
 
 import requests
 import sys
 
 
-def letter():
-    leta = sys.argv[1] if len(sys.argv) > 1 else ""
+def it():
+    search = sys.argv[1] if len(sys.argv) > 1 else ""
     url = f'http://0.0.0.0:5000/search_user'
-    post_request = requests.post(url, data={'leta': leta})
+    api = requests.post(url, data={'search': search})
 
     try:
-        content = post_request.json()
+        content = api.json()
         if content == {}:
             print("No result")
         else:
@@ -25,4 +25,4 @@ def letter():
 
 
 if __name__ == '__main__':
-    letter()
+    it()
