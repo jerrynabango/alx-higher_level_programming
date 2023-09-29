@@ -11,9 +11,10 @@ import sys
 def it():
     q = sys.argv[1] if len(sys.argv) > 1 else ""
     url = f'http://0.0.0.0:5000/search_user'
-    res = requests.post(url, data={'q': q})
+    search = requests.post(url, data={'q': q})
+
     try:
-        content = res.json()
+        content = search.json()
         if content == {}:
             print("No result")
         else:
