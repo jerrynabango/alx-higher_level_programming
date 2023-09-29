@@ -15,10 +15,10 @@ def time():
     argument = takes.json()
 
     try:
-        for i in range(10):
+        for solve in range(10):
             print("{}: {}".format(
-                argument[i].get("sha"),
-                argument[i].get("commit").get("author").get("name")))
+                argument[solve].get("sha"),
+                argument[solve].get("commit").get("author").get("name")))
     except IndexError:
         pass
 
