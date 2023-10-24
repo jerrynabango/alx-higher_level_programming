@@ -5,14 +5,14 @@ const request = require('request');
 request(process.argv[2], function (error, response, body) {
   if (!error) {
     const tasks = JSON.parse(body);
-    const taskCompleted = {};
+    const completed = {};
     tasks.forEach((todo) => {
-      if (todo.taskCompleted && taskCompleted[todo.userId] === undefined) {
-        taskCompleted[todo.userId] = 1;
-      } else if (todo.taskCompleted) {
-        taskCompleted[todo.userId] += 1;
+      if (todo.completed && completed[todo.userId] === undefined) {
+        completed[todo.userId] = 1;
+      } else if (todo.completed) {
+        completed[todo.userId] += 1;
       }
     });
-    console.log(taskCompleted);
+    console.log(completed);
   }
 });
